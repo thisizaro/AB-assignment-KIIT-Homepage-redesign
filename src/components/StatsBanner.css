@@ -1,0 +1,60 @@
+.stats-banner {
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-dark) 100%);
+  padding: 64px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.stat-box + .stat-box {
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.stat-num {
+  font-family: 'Merriweather', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--green-light);
+  line-height: 1;
+}
+
+.stat-plus {
+  color: rgba(0, 196, 98, 0.7);
+  font-size: 24px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-box:nth-child(4) {
+    border-left: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-num {
+    font-size: 32px;
+  }
+}

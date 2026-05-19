@@ -1,0 +1,119 @@
+.news {
+  background: var(--off-white);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--gray1);
+  transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.news-card-img {
+  height: 160px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.news-grid > .news-card:first-child .news-card-img {
+  height: 220px;
+}
+
+.news-emoji {
+  font-size: 48px;
+}
+
+.news-card-img-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.news-card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.news-date {
+  font-size: 11px;
+  color: var(--gray3);
+  font-weight: 600;
+}
+
+.news-category {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-pale);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.news-title {
+  font-size: 15px;
+  color: var(--dark);
+  line-height: 1.45;
+  margin-bottom: 10px;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+.news-excerpt {
+  font-size: 13px;
+  color: var(--gray3);
+  line-height: 1.65;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.news-read-more {
+  margin-top: auto;
+}
+
+.news-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}

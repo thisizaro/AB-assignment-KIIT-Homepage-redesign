@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── KIIT BRAND TOKENS ── */
+:root {
+  /* Primary greens — from official logo */
+  --green:       #00A651;   /* KIIT signature green */
+  --green-dark:  #007A3D;   /* darker variant */
+  --green-deep:  #004F25;   /* very dark green for text/bg */
+  --green-light: #00C462;   /* lighter accent */
+  --green-pale:  #E6F7EE;   /* soft green tint backgrounds */
+  --green-mid:   #00B455;   /* mid-tone */
+
+  /* Neutrals */
+  --white:    #FFFFFF;
+  --off-white: #F7FAF8;
+  --gray1:    #EFF5F1;
+  --gray2:    #C2D4C9;
+  --gray3:    #7A9A86;
+  --gray4:    #4A6655;
+  --dark:     #0D1F15;       /* near-black with green undertone */
+  --dark2:    #152B1E;
+
+  /* Accent — gold for CTAs */
+  --gold:     #F5A623;
+  --gold2:    #FFB84D;
+
+  /* UI */
+  --radius:   12px;
+  --radius-lg: 20px;
+  --shadow:   0 4px 24px rgba(0,70,35,0.10);
+  --shadow-lg: 0 12px 48px rgba(0,70,35,0.16);
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── BASE ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--off-white);
+  color: var(--dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+  line-height: 1.15;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── SHARED SECTION LAYOUT ── */
+section {
+  padding: 96px 0;
+}
+
+.section-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--gray3);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── SHARED BUTTONS ── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--green), var(--green-mid));
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: box-shadow var(--transition), transform var(--transition);
+  font-family: inherit;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(0,166,81,0.45);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color var(--transition), background var(--transition);
+  font-family: inherit;
+}
+
+.btn-outline:hover {
+  border-color: var(--green-light);
+  background: rgba(0,166,81,0.08);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background var(--transition), color var(--transition);
+  font-family: inherit;
+}
+
+.btn-outline-dark:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+/* ── CARD LINK ── */
+.card-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap var(--transition);
+}
+
+.card-link:hover {
+  gap: 8px;
+}
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+@media (max-width: 1024px) {
+  .section-inner { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+  section { padding: 64px 0; }
+  .section-inner { padding: 0 20px; }
+}

@@ -1,0 +1,133 @@
+.campus {
+  background: var(--white);
+}
+
+.campus-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.bento-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  transition: transform var(--transition);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.bento-item:hover {
+  transform: scale(1.02);
+}
+
+/* Individual bento slot sizes & colors */
+.bento-item-1 {
+  grid-column: span 7;
+  min-height: 300px;
+  background: linear-gradient(140deg, var(--green-deep) 0%, #0c3020 100%);
+}
+
+.bento-item-2 {
+  grid-column: span 5;
+  min-height: 300px;
+  background: linear-gradient(140deg, #0a2a18 0%, #183d28 100%);
+}
+
+.bento-item-3 {
+  grid-column: span 4;
+  background: linear-gradient(140deg, #071a10 0%, #0e2d1c 100%);
+}
+
+.bento-item-4 {
+  grid-column: span 4;
+  background: linear-gradient(140deg, #0d2218 0%, #1a3a28 100%);
+}
+
+.bento-item-5 {
+  grid-column: span 4;
+  background: linear-gradient(140deg, #0e2010 0%, #163225 100%);
+}
+
+/* Green top-border accent on hover */
+.bento-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.bento-item:hover::before {
+  opacity: 1;
+}
+
+.bento-emoji {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.bento-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 6px;
+}
+
+.bento-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  font-family: 'Merriweather', serif;
+}
+
+.bento-item-1 .bento-title {
+  font-size: 24px;
+}
+
+.bento-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .campus-bento {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bento-item-1,
+  .bento-item-2,
+  .bento-item-3,
+  .bento-item-4,
+  .bento-item-5 {
+    grid-column: span 1;
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .campus-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-item-1,
+  .bento-item-2,
+  .bento-item-3,
+  .bento-item-4,
+  .bento-item-5 {
+    grid-column: span 1;
+    min-height: 160px;
+  }
+}

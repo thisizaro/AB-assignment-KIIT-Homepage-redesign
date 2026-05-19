@@ -1,0 +1,80 @@
+.rankings {
+  background: var(--white);
+}
+
+.rankings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.rank-card {
+  background: var(--off-white);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gray1);
+  transition: box-shadow var(--transition), transform var(--transition);
+  text-align: center;
+}
+
+.rank-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.rank-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+}
+
+.rank-body {
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.rank-body span {
+  font-size: 18px;
+  color: var(--green);
+}
+
+.rank-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.rank-source {
+  font-size: 11px;
+  color: var(--gray3);
+}
+
+.rank-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+  .rankings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
